@@ -14,6 +14,6 @@ if BMI<18.5:
     print("過輕")
 elif 18.5<=BMI and BMI<24:
     print("正常")
-elif BMI>24:
+else:
     print("過重")
         
