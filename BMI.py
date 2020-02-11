@@ -10,3 +10,10 @@ Created on Tue Feb 11 14:06:42 2020
 體重=float(input("weight:"))
 BMI=(體重//身高**2)
 print("BMI是",BMI)
+if BMI<18.5:
+    print("過輕")
+elif 18.5<=BMI and BMI<24:
+    print("正常")
+elif BMI>24:
+    print("過重")
+        
