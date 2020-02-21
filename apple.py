@@ -6,19 +6,29 @@ apple4=0
 while True:
     a=int(input("請選擇一個功能 1-設定 2-進貨 3-出貨 4-營業額 5-庫存 6-結束 7-老闆資產 8-輸入老闆資產"))#問要哪個功能
     if a==1:
-       apple=int(input("總共有幾顆蘋果？"))#問總共幾顆蘋果
-       price=int(input("一顆蘋果多少錢？"))#問一顆蘋果要幾元
+       fo = open('myfile.txt','w')
+       apple=(input("總共有幾顆蘋果？"))#問總共幾顆蘋果
+       price=(input("一顆蘋果多少錢？"))#問一顆蘋果要幾元
        print("蘋果庫存有",apple,"顆")#把庫存印出
        print("一顆蘋果",price,"元")#把價格印出
+       fo.write(apple+"\n"+price+"\n")
+       fo.close()
     elif a==2:
-        apple1=int(input("總共進貨幾顆？"))#問進貨幾顆
+        fo = open('myfile.txt','a')
+        apple1=(input("總共進貨幾顆？"))#問進貨幾顆
         print('加了',apple1,"顆蘋果")#印出進貨幾顆
         applelist2.append(apple1)#把進貨加到清單中
+        int(apple)
+        int(apple1)
+        int(price)
         apple+=apple1#計算庫存
         print("蘋果庫存有",apple,"顆")#印出庫存
-        price2=price*apple1#計算花多少元
+        price2=int(price)*int(apple1)#計算花多少元
         print("總共花了",price2,"元")#印出花多少元
         print("每次的進貨數量",applelist2)#印出每次進貨多少
+        for i in range(len(applelist2)):
+            fo.write(applelist2[i]+"\n")
+        fo.close()
     elif a==3:
         apple2=int(input("總共出貨幾顆？"))#問出貨幾顆
         print('減了',apple2,"顆蘋果")#印出出貨幾顆
@@ -42,4 +52,6 @@ while True:
         print("老闆身上有",apple4,"元")
     else:
         apple4=int(input("老闆身上有幾元？"))
+        
+
     
